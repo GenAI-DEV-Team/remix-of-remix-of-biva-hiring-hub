@@ -1,0 +1,267 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Light mode - Colorful modern style */
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 262.1 83.3% 57.8%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 262.1 83.3% 57.8%;
+
+    --radius: 0.75rem;
+
+    /* Custom tokens for document-style */
+    --text-secondary: 215.4 16.3% 46.9%;
+    --text-tertiary: 220 13% 65%;
+    --heading-primary: 222.2 84% 4.9%;
+    --heading-secondary: 222.2 47.4% 11.2%;
+    --surface-elevated: 0 0% 100%;
+    --surface-subtle: 210 40% 98%;
+
+    /* Accent colors for colorful UI */
+    --accent-purple: 262.1 83.3% 57.8%;
+    --accent-blue: 217.2 91.2% 59.8%;
+    --accent-cyan: 189.5 94.5% 42.7%;
+    --accent-pink: 330.4 81.2% 60.4%;
+    --accent-orange: 24.6 95% 53.1%;
+
+    --sidebar-background: 210 40% 98%;
+    --sidebar-foreground: 222.2 47.4% 11.2%;
+    --sidebar-primary: 262.1 83.3% 57.8%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 210 40% 96.1%;
+    --sidebar-accent-foreground: 222.2 47.4% 11.2%;
+    --sidebar-border: 214.3 31.8% 91.4%;
+    --sidebar-ring: 262.1 83.3% 57.8%;
+  }
+
+  .dark {
+    /* Dark mode - softer contrast for readability */
+    --background: 222 47% 6%;
+    --foreground: 210 20% 78%;
+
+    --card: 222 47% 8%;
+    --card-foreground: 210 20% 78%;
+
+    --popover: 222 47% 8%;
+    --popover-foreground: 210 20% 78%;
+
+    --primary: 262.1 83.3% 57.8%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 222 47% 12%;
+    --secondary-foreground: 210 20% 85%;
+
+    --muted: 222 47% 12%;
+    --muted-foreground: 215 20% 55%;
+
+    --accent: 222 47% 12%;
+    --accent-foreground: 210 20% 85%;
+
+    --destructive: 0 62.8% 50.6%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 30% 18%;
+    --input: 220 30% 18%;
+    --ring: 262.1 83.3% 57.8%;
+
+    /* Custom tokens for document-style */
+    --text-secondary: 215 20% 60%;
+    --text-tertiary: 215 15% 45%;
+    --heading-primary: 0 0% 98%;
+    --heading-secondary: 0 0% 92%;
+    --surface-elevated: 222 47% 10%;
+    --surface-subtle: 222 47% 8%;
+
+    /* Accent colors for colorful UI */
+    --accent-purple: 262.1 83.3% 57.8%;
+    --accent-blue: 217.2 91.2% 59.8%;
+    --accent-cyan: 189.5 94.5% 42.7%;
+    --accent-pink: 330.4 81.2% 60.4%;
+    --accent-orange: 24.6 95% 53.1%;
+
+    --sidebar-background: 224 71% 6%;
+    --sidebar-foreground: 213 31% 91%;
+    --sidebar-primary: 262.1 83.3% 57.8%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 222.2 47.4% 11.2%;
+    --sidebar-accent-foreground: 213 31% 91%;
+    --sidebar-border: 216 34% 17%;
+    --sidebar-ring: 262.1 83.3% 57.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    overflow-x: hidden;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    overflow-x: hidden;
+    min-width: 320px;
+  }
+}
+
+/* Content display styles - for rendering HTML content */
+.content-display ul {
+  list-style-type: disc;
+  padding-left: 1.25rem;
+  margin: 0.5rem 0;
+}
+
+@media (min-width: 640px) {
+  .content-display ul {
+    padding-left: 1.5rem;
+    margin: 0.75rem 0;
+  }
+}
+
+.content-display ol {
+  list-style-type: decimal;
+  padding-left: 1.25rem;
+  margin: 0.5rem 0;
+}
+
+@media (min-width: 640px) {
+  .content-display ol {
+    padding-left: 1.5rem;
+    margin: 0.75rem 0;
+  }
+}
+
+.content-display li {
+  margin: 0.25rem 0;
+  display: list-item;
+  line-height: 1.6;
+}
+
+@media (min-width: 640px) {
+  .content-display li {
+    line-height: 1.7;
+  }
+}
+
+.content-display blockquote {
+  border-left: 2px solid hsl(var(--border));
+  padding-left: 0.75rem;
+  color: hsl(var(--muted-foreground));
+  font-style: italic;
+  margin: 0.5rem 0;
+  font-size: 0.875rem;
+}
+
+@media (min-width: 640px) {
+  .content-display blockquote {
+    padding-left: 1rem;
+    margin: 0.75rem 0;
+    font-size: 1rem;
+  }
+}
+
+.content-display h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 1.25rem 0 0.5rem;
+}
+
+@media (min-width: 640px) {
+  .content-display h3 {
+    font-size: 1.125rem;
+    margin: 1.5rem 0 0.75rem;
+  }
+}
+
+.content-display p {
+  margin: 0.5rem 0;
+  line-height: 1.6;
+}
+
+@media (min-width: 640px) {
+  .content-display p {
+    margin: 0.75rem 0;
+    line-height: 1.7;
+  }
+}
+
+/* Editor styles */
+.editor-content .ProseMirror {
+  min-height: 300px;
+  padding: 1rem;
+  outline: none;
+  color: #1e293b;
+  background-color: white;
+}
+
+.editor-content .ProseMirror h1 { font-size: 1.5rem; font-weight: 700; margin: 1rem 0 0.5rem; color: #0f172a; }
+.editor-content .ProseMirror h2 { font-size: 1.25rem; font-weight: 600; margin: 1rem 0 0.5rem; color: #0f172a; }
+.editor-content .ProseMirror h3 { font-size: 1.125rem; font-weight: 600; margin: 0.75rem 0 0.5rem; color: #0f172a; }
+.editor-content .ProseMirror p { margin: 0.5rem 0; color: #1e293b; }
+.editor-content .ProseMirror ul { 
+  list-style-type: disc; 
+  padding-left: 1.5rem; 
+  margin: 0.5rem 0; 
+}
+.editor-content .ProseMirror ol { 
+  list-style-type: decimal; 
+  padding-left: 1.5rem; 
+  margin: 0.5rem 0; 
+}
+.editor-content .ProseMirror li { 
+  margin: 0.25rem 0; 
+  display: list-item;
+  color: #1e293b;
+}
+.editor-content .ProseMirror li p {
+  margin: 0;
+  display: inline;
+  color: #1e293b;
+}
+.editor-content .ProseMirror blockquote { 
+  border-left: 2px solid #e2e8f0; 
+  padding-left: 1rem; 
+  color: #64748b; 
+  font-style: italic;
+  margin: 0.75rem 0;
+}
+.editor-content .ProseMirror hr { border-color: #e2e8f0; margin: 1rem 0; }
+.editor-content .ProseMirror p.is-editor-empty:first-child::before {
+  color: #94a3b8;
+  content: attr(data-placeholder);
+  float: left;
+  height: 0;
+  pointer-events: none;
+}
+
+/* Force light mode for editor */
+.editor-content .ProseMirror strong { color: #0f172a; }
+.editor-content .ProseMirror a { color: #2563eb; }
